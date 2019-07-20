@@ -9,29 +9,34 @@ class DirectoryMenu extends React.Component {
       {
         id: 1,
         title: 'Hats',
-        imageUrl: 'https://i.ibb.co/cvpntL1/hats.png'
+        imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+        linkUrl: '/hats'
       },
       {
         id: 2,
         title: 'Jackets',
-        imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png'
+        imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+        linkUrl: ''
       },
       {
         id: 3,
         title: 'Sneakers',
-        imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png'
+        imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+        linkUrl: ''
       },
       {
         id: 4,
         title: 'Womens',
         size: 'large',
-        imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png'
+        imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+        linkUrl: ''
       },
       {
         id: 5,
         title: 'Mens',
         size: 'large',
-        imageUrl: 'https://i.ibb.co/R70vBrQ/men.png'
+        imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+        linkUrl: ''
       }
     ]
   }
@@ -42,12 +47,7 @@ class DirectoryMenu extends React.Component {
         {
           this.state.sections.map(section => {
             return (
-              <MenuItem
-                key={section.id}
-                title={section.title.toUpperCase()}
-                imageUrl={section.imageUrl}
-                size={section.size}
-              />
+              <MenuItem key={section.id} {...section} />
             )
           })
         }
